@@ -1,0 +1,132 @@
+<head>
+  <title>JS TO GOWNO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class='container' role='main' style="width: 100%; margin:0% 5% 0% 0% ; padding: 0;">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header" style="width:100%; height:50px">
+          <a class="navbar-brand page-title" href="#">
+            <span>
+              Weird AF
+            </span>
+          </a>
+          <a class="navbar-brand" ng-href="" target="_blank" href="#">
+            <span class="text-muted small ng-binding">
+              vBETA
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 tabelakursow">
+          <table class="table" id="tableOptions">
+            <tbody>
+              <tr>
+                <td>Kolor zaznaczenia</td>
+                <td>Zarządzanie kolorami</td>
+                <td>Zarządzanie zaznaczeniem</td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="color" id="paletaKolorow" style="paddign:0px 100px;" value="#ffff80">
+                </td>
+                <td>
+                  <button class="btn btn-danger" onClick="deleteColor()" id="czysckolory">Usuń kolory</button>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button class="btn btn-default notThatSmallFont" onClick="checkTheBoxes(false)" id='usuwanieZaznaczenia'>Odznacz<br>wszystkie</button>
+                    <button class="btn btn-default notThatSmallFont" onClick="checkTheBoxes(true)" id='dodawanieZaznaczenia'>Zaznacz<br>wszystkie</button>
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-default smallerFont" onClick="colorIfChecked(true, true)" id='kolorowanieZaznaczenia'>Koloruj<br>Zaznaczone</button>
+                    <button class="btn btn-default smallerFont" onClick="colorIfChecked(false, true)" id='wybielanieZaznaczenia'>Wybiel<br>Zaznaczone</button>
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-default smallerFont" onClick="colorIfChecked(true, false)" id='wybielanieNieZaznaczenia'>Koloruj<br>Niezaznaczone</button>
+                    <button class="btn btn-default smallerFont" onClick="colorIfChecked(false, false)" id='wybielanieNieZaznaczenia'>Wybiel<br>Niezaznaczone</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table id="demo"></table>
+        </div>
+        <div class="col-sm-6" style='padding:0;'>
+          <div class="container-fluid tableGeneratorButton" style='padding:0;'>
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="tabela">Tabela: </label>
+                <select class="form-control"id="tabela">
+                  <option value="a" id="tabelaA">A</option>
+                  <option value="b" id="tabelaB" disabled>B</option>
+                  <option value="c" id="tabelaC">C</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="waluta">Waluta: </label>
+                <select class="form-control" id="waluta">
+                  <option value="eur">EUR</option>
+                  <option value="nok">NOK</option>
+                  <option value="sek">SEK</option>
+                  <option value="gbp">GBP</option>
+                  <option value="usd">USD</option>
+                </select>
+              </div>
+            </form>
+            <form class="form-inline">
+              <div class="form-group">
+                <strong class="oddo">OD</strong>
+              </div>
+              <div class="form-group">
+                <label for="rokStart">Rok</label>
+                <input class="form-control" type="number" min="2000" max="2017" step="1" id="rokStart">
+              </div>
+              <div class="form-group">
+                <label for="miesiacStart">Miesiąc</label>
+                <input class="form-control" type="number" min="1" max="12" step="1" value="1" id="miesiacStart">
+              </div>
+              <div class="form-group">
+                <label for="dzienStart">Dzień</label>
+                <input class="form-control" type="number" min="1" max="31" step="1" value="1" id="dzienStart">
+              </div>
+            </form>
+            <form class="form-inline">
+              <div class="form-group">
+                <strong class="oddo">DO</strong>
+              </div>
+              <div class="form-group">
+                <label for="rok">Rok</label>
+                <input class="form-control" type="number" min="2000" max="2017" step="1" id="rok">
+              </div>
+              <div class="form-group">
+                <label for="miesiac">Miesiąc</label>
+                <input class="form-control" type="number" min="1" max="12" step="1" id="miesiac">
+              </div>
+              <div class="form-group">
+                <label for="dzien">Dzień</label>
+                <input class="form-control" type="number" min="1" max="31" step="1" id="dzien">
+              </div>
+            </form>
+            <div class="container-fluid">
+              <button class="btn btn-primary tableGeneratorButton" onClick="loadXMLDoc()" id="tableGeneratorButton">Generuj Tabelę Walut</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="basic.js"></script>

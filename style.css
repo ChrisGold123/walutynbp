@@ -1,0 +1,78 @@
+.smallerfont{
+  font-size: 0.7em!important;
+}
+.notThatSmallFont {
+  font-size: 0.8em!important;
+}
+
+#tableOptions td {
+    border-style: none;
+    border-top: 0px;
+    text-align: center;
+    margin: 0
+}
+#tableOptions td:nth-child() {
+  border-right: 1px solid lightgray;
+}
+table {
+  margin: 0 auto;
+}
+#tableOptions .btn-group {
+  display: flex;
+  flex-direction: row;
+}
+#tableOptions .btn-group > button {
+  flex-grow: 1;
+}
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+#demo,
+#demo th,
+#demo td,
+#demo tr {
+  border : 1px solid black;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: center;
+}
+#demo th,
+#demo td {
+  padding: 2px;
+}
+.oddo {
+  font-size: 1.5em;
+  margin-right: 30px;
+}
+.inputdanych {
+  padding: 3px;
+  margin-left:
+}
+.tableGeneratorButton {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+.important-center-text {
+  text-align: center;
+  font-size: 1.25em;
+}
+.form-group {
+  text-align: center;
+}
+.tabelakursow {
+  padding: 0px;
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+option[disabled] {
+  background-color: gray;
+  color: white;
+}
