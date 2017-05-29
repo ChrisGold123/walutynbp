@@ -20,14 +20,17 @@ switch (id) {
     console.log("nie działa pobieranie dzisiejszej daty do formularza");;
   }
 }
+
 function deleteColor() {
   $('#demo .unselectable').css('background-color', '#FFFFFF');
 }
+
 function checkTheBoxes(bool) {
   $('#demo tr').each(function() {
     $("input[type='checkbox']").prop('checked', bool);
   });
 }
+
 function colorIfChecked(bool, boolIfChecked) {
   $('#demo tr').each(function() {
     if($(this).is("[id]")) {
@@ -48,6 +51,7 @@ function colorIfChecked(bool, boolIfChecked) {
     }
   });
 }
+
 function loadXMLDoc() {
   var tabela = document.getElementById("tabela").value;
   console.log(tabela);
@@ -73,9 +77,7 @@ function loadXMLDoc() {
       var combinedURL = "https://api.nbp.pl/api/exchangerates/rates/" + tabela + "/" + currency + "/" + yearStart + "-" + monthStart + "-" + dayStart + "/" + yearEnd + "-" + monthEnd + "-" + dayEnd + "/?format=xml";
       break;
     default:
-
   }
-  // var combinedURL = "https://api.nbp.pl/api/exchangerates/rates/" + tabela + "/" + currency + "/" + yearStart + "-" + monthStart + "-" + dayStart + "/" + yearEnd + "-" + monthEnd + "-" + dayEnd + "/?format=xml";
   console.log(combinedURL);
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
@@ -86,6 +88,7 @@ function loadXMLDoc() {
   xmlhttp.open("GET", combinedURL, true);
   xmlhttp.send();
 }
+
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
@@ -139,9 +142,7 @@ function myFunction(xml) {
       }
       break;
     default:
-
   }
-
   document.getElementById("demo").innerHTML = table;
   var addshithere = document.getElementById("demo");
   var addshit = addshithere.getElementsByTagName("tr");
@@ -158,6 +159,7 @@ function myFunction(xml) {
     console.log('2. mialo byc' + plannedColor + ' jest: ' + targetColor);
   });
 }
+
 $(document).ready(function() {
   giveDate("rok");
   giveDate("rokStart");
@@ -165,6 +167,7 @@ $(document).ready(function() {
   giveDate("miesiacStart");
   giveDate("dzien");
 });
+
 $(".btn").mouseup(function(){
     $(this).blur();
 })
